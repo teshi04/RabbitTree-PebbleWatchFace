@@ -10,6 +10,13 @@
     "resources": {
         "media": [
             {
+                "file": "images/menu.png",
+                "menuIcon": true,
+                "name": "MENU",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
                 "file": "images/rabbit_tree_unlimited.png",
                 "name": "RABBIT_TREE_UNLIMITED",
                 "targetPlatforms": null,
@@ -23,7 +30,6 @@
             },
             {
                 "file": "images/rabbit_tree_default.png",
-                "menuIcon": true,
                 "name": "RABBIT_TREE_DEFAULT",
                 "targetPlatforms": null,
                 "type": "bitmap"
