@@ -23,6 +23,7 @@
             },
             {
                 "file": "images/rabbit_tree_default.png",
+                "menuIcon": true,
                 "name": "RABBIT_TREE_DEFAULT",
                 "targetPlatforms": null,
                 "type": "bitmap"

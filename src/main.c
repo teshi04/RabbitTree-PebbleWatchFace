@@ -23,7 +23,6 @@ static void main_window_load(Window *window) {
   GRect bounds = layer_get_frame(window_layer);
 
   // text
-  // round / tate
   s_time_layer = text_layer_create(GRect(PBL_IF_ROUND_ELSE(30, 20), PBL_IF_ROUND_ELSE(40, 20), bounds.size.w, 40));
   s_date_layer = text_layer_create(GRect(PBL_IF_ROUND_ELSE(30, 20), PBL_IF_ROUND_ELSE(70, 50), bounds.size.w, 40));
   
@@ -44,7 +43,7 @@ static void main_window_load(Window *window) {
   tick_timer_service_subscribe(SECOND_UNIT, handle_second_tick);
 
   // image
-  int current_hour = 11;//current_time->tm_hour;
+  int current_hour = current_time->tm_hour;
   if (current_hour <= 9) {
     // 0 - 9 sleep
     rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_SLEEP;
@@ -56,7 +55,7 @@ static void main_window_load(Window *window) {
     rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_DEFAULT;
   } else {
     // 19 - 23 ultimate
-    rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_DEFAULT;
+    rabbit_tree_resource_id = RABBIT_TREE_UNLIMITED;
   } 
  
   s_background_bitmap = gbitmap_create_with_resource(rabbit_tree_resource_id);
