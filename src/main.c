@@ -23,8 +23,8 @@ static void main_window_load(Window *window) {
   GRect bounds = layer_get_frame(window_layer);
 
   // text
-  s_time_layer = text_layer_create(GRect(PBL_IF_ROUND_ELSE(30, 20), PBL_IF_ROUND_ELSE(40, 20), bounds.size.w, 40));
-  s_date_layer = text_layer_create(GRect(PBL_IF_ROUND_ELSE(30, 20), PBL_IF_ROUND_ELSE(70, 50), bounds.size.w, 40));
+  s_time_layer = text_layer_create(GRect(PBL_IF_ROUND_ELSE(30, 15), PBL_IF_ROUND_ELSE(40, 30), bounds.size.w, 40));
+  s_date_layer = text_layer_create(GRect(PBL_IF_ROUND_ELSE(30, 15), PBL_IF_ROUND_ELSE(70, 60), bounds.size.w, 40));
   
   text_layer_set_text_color(s_time_layer, GColorBlack);
   text_layer_set_background_color(s_time_layer, GColorClear);
@@ -55,9 +55,8 @@ static void main_window_load(Window *window) {
     rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_DEFAULT;
   } else {
     // 19 - 23 ultimate
-    rabbit_tree_resource_id = RABBIT_TREE_UNLIMITED;
+    rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_UNLIMITED;
   } 
- 
   s_background_bitmap = gbitmap_create_with_resource(rabbit_tree_resource_id);
   s_background_layer = bitmap_layer_create(GRect(30, 0, bounds.size.w, bounds.size.h));
   bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
@@ -71,7 +70,6 @@ static void main_window_unload(Window *window) {
   tick_timer_service_unsubscribe();
   text_layer_destroy(s_time_layer);
   text_layer_destroy(s_date_layer);
-
   gbitmap_destroy(s_background_bitmap);
   bitmap_layer_destroy(s_background_layer);
 }
