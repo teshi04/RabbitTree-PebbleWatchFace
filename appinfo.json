@@ -1,0 +1,50 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "teshi04",
+    "enableMultiJS": true,
+    "longName": "Rabbit Tree",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/rabbit_tree_unlimited.png",
+                "name": "RABBIT_TREE_UNLIMITED",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/rabbit_tree_smile.png",
+                "name": "RABBIT_TREE_SMILE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/rabbit_tree_default.png",
+                "name": "RABBIT_TREE_DEFAULT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/rabbit_tree_sleep.png",
+                "name": "RABBIT_TREE_SLEEP",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Rabbit Tree",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "1b43b89b-3548-4891-b75e-ab27fdbb2a9a",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
