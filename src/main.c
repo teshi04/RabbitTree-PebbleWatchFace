@@ -35,13 +35,17 @@ static void handle_second_tick(struct tm* tick_time, TimeUnits units_changed) {
   static char s_time_text[10];
   static char s_date_text[8];
 
-  strftime(s_time_text, sizeof(s_time_text), "%T", tick_time);
+  if (clock_is_24h_style()) {
+    strftime(s_time_text, sizeof(s_time_text), "%H:%M:%S", tick_time);
+  } else {
+    strftime(s_time_text, sizeof(s_time_text), "%I:%M:%S", tick_time);
+  }
   text_layer_set_text(s_time_layer, s_time_text);
   
   strftime(s_date_text, sizeof(s_date_text), "%b %d", tick_time);
   text_layer_set_text(s_date_layer, s_date_text);
   
-  update_rabbit_face(tick_time->tm_min);
+  update_rabbit_face(tick_time->tm_hour);
 }
 
 static void main_window_load(Window *window) {
