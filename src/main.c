@@ -5,7 +5,7 @@ static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
 static BitmapLayer *s_background_layer;
 static GBitmap *s_background_bitmap;
-static uint32_t rabbit_tree_resource_id;
+static uint32_t s_rabbit_tree_resource_id;
 
 static void handle_second_tick(struct tm* tick_time, TimeUnits units_changed) {
   static char s_time_text[10];
@@ -54,10 +54,10 @@ static void main_window_load(Window *window) {
     // 13 - 18 default
     rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_DEFAULT;
   } else {
-    // 19 - 23 ultimate
+    // 19 - 23 unlimited
     rabbit_tree_resource_id = RESOURCE_ID_RABBIT_TREE_UNLIMITED;
   } 
-  s_background_bitmap = gbitmap_create_with_resource(rabbit_tree_resource_id);
+  s_background_bitmap = gbitmap_create_with_resource(s_rabbit_tree_resource_id);
   s_background_layer = bitmap_layer_create(GRect(30, 0, bounds.size.w, bounds.size.h));
   bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
   
